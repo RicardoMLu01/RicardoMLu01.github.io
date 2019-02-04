@@ -48,26 +48,4 @@
     
   </entry>
   
-  <entry>
-    <title>你好，Hexo</title>
-    <link href="images/avatar.gif/2019/02/03/%E4%BD%A0%E5%A5%BD%EF%BC%8CHexo/"/>
-    <id>images/avatar.gif/2019/02/03/你好，Hexo/</id>
-    <published>2019-02-03T14:30:16.000Z</published>
-    <updated>2019-02-04T07:46:58.889Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Hexo" scheme="images/avatar.gif/categories/Hexo/"/>
-    
-      <category term="Hello" scheme="images/avatar.gif/categories/Hexo/Hello/"/>
-    
-    
-      <category term="Hexo" scheme="images/avatar.gif/tags/Hexo/"/>
-    
-      <category term="Hello" scheme="images/avatar.gif/tags/Hello/"/>
-    
-  </entry>
-  
 </feed>
