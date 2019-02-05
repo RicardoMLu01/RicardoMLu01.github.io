@@ -60,6 +60,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
@@ -70,7 +76,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -104,27 +110,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Ricardo   Activity" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Ricardo Blogs" type="application/atom+xml">
 
 
 
 
 
 
-<meta name="description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
+<meta name="description" content="不同位宽设备的连接上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="s3c2440之内存控制器与SDRAM学习笔记">
 <meta property="og:url" content="images/avatar.gif/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/index.html">
-<meta property="og:site_name" content="Ricardo   Activity">
-<meta property="og:description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
+<meta property="og:site_name" content="Ricardo Blogs">
+<meta property="og:description" content="不同位宽设备的连接上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github/blog/source/_posts/s3c2440之内存控制器与SDRAM学习笔记/1.png">
-<meta property="og:updated_time" content="2019-02-05T01:03:27.032Z">
+<meta property="og:updated_time" content="2019-02-05T08:23:07.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="s3c2440之内存控制器与SDRAM学习笔记">
-<meta name="twitter:description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
-<meta name="twitter:image" content="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github/blog/source/_posts/s3c2440之内存控制器与SDRAM学习笔记/1.png">
+<meta name="twitter:description" content="不同位宽设备的连接上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高">
 
 
 
@@ -160,7 +164,7 @@
 
 
 
-  <title>s3c2440之内存控制器与SDRAM学习笔记 | Ricardo   Activity</title>
+  <title>s3c2440之内存控制器与SDRAM学习笔记 | Ricardo Blogs</title>
   
 
 
@@ -190,12 +194,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Ricardo   Activity</span>
+        <span class="site-title">Ricardo Blogs</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">BLOG</p>
+        <p class="site-subtitle">NOTE</p>
       
   </div>
 
@@ -338,7 +342,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ricardo   Activity">
+      <meta itemprop="name" content="Ricardo Blogs">
     </span>
 
     
@@ -364,7 +368,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-05T16:23:07+08:00">
+                2019-02-05
+              </time>
             
           </span>
 
@@ -398,6 +414,17 @@
 
           
           
+             <span id="/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/" class="leancloud_visitors" data-flag-title="s3c2440之内存控制器与SDRAM学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -418,18 +445,9 @@
       
 
       
-        <pre><code>这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。
-</code></pre><ol>
-<li><strong>不同位宽设备的连接</strong></li>
-</ol>
-<p><img src="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github\blog\source\_posts\s3c2440之内存控制器与SDRAM学习笔记\1.png" alt=""></p>
-<p>​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高位ROM字节的具体位置还需要内存控制器近一步寻找。</p>
-<ol start="2">
-<li><p><strong>Nor Flash</strong></p>
-<p>Nor Flash的空间0x00000000 ~0x06000000，为128M（即每一个片选信号可以选择的空间是128M=2^27），也就需要A0、A1……A26，共27根地址线。CPU发出的32位地址线，内存控制器根据地址范围，片选上相应的bank，并将地址转化为27位。</p>
+        <h3 id="不同位宽设备的连接"><a href="#不同位宽设备的连接" class="headerlink" title="不同位宽设备的连接"></a><strong>不同位宽设备的连接</strong></h3><p>上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高位ROM字节的具体位置还需要内存控制器近一步寻找。</p>
+<h3 id="Nor-Flash"><a href="#Nor-Flash" class="headerlink" title="Nor Flash"></a><strong>Nor Flash</strong></h3><p>Nor Flash的空间0x00000000 ~0x06000000，为128M（即每一个片选信号可以选择的空间是128M=2^27），也就需要A0、A1……A26，共27根地址线。CPU发出的32位地址线，内存控制器根据地址范围，片选上相应的bank，并将地址转化为27位。</p>
 <p>当选择Nor Flash启动时，CPU发出的指令的地址范围处于0x0000000 - 0x06000000，内存控制器就会使nGCS0处于低电平（片选引脚被选中），Nor Flash被选中。内存控制器根据不同的地址地址范围，发出不同的片选引脚，只有被片选引脚选中的芯片才能正常工作，不被选中的芯片就像不存在一样。</p>
-</li>
-</ol>
 
       
     </div>
@@ -456,6 +474,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/" rel="prev" title="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
+                嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -504,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -522,7 +565,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -571,21 +614,27 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:ricardomlu01@gmail.com" target="_blank" title="E-Mail">
+                    <a href="https://mail.163.com/" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/yi-ke-id/activities" target="_blank" title="֪��">
+                    <a href="https://www.zhihu.com/" target="_blank" title="֪知乎">
                       
                         <i class="fa fa-fw fa-ioxhost"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                    <a href="https://www.baidu.com/" target="_blank" title="Google">
                       
-                        <i class="fa fa-fw fa-stack-overflow"></i></a>
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-skype"></i></a>
                   </span>
                 
             </div>
@@ -608,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不同位宽设备的连接"><span class="nav-number">1.</span> <span class="nav-text">不同位宽设备的连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nor-Flash"><span class="nav-number">2.</span> <span class="nav-text">Nor Flash</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1124,6 +1189,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("IokkGKi6U7IyOzvN2RUXAYCI-gzGzoHsz", "nlNDM3QiPx4gmMJxiqnTfGGu");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

@@ -104,7 +104,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -117,16 +117,18 @@
 
 
 
-<meta name="description" content="Cease to struggle and you cease to live">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ricardo Blogs">
-<meta property="og:url" content="images/avatar.gif/archives/2019/02/index.html">
+<meta name="description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
+<meta property="og:url" content="images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/index.html">
 <meta property="og:site_name" content="Ricardo Blogs">
-<meta property="og:description" content="Cease to struggle and you cease to live">
+<meta property="og:description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-05T05:31:55.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ricardo Blogs">
-<meta name="twitter:description" content="Cease to struggle and you cease to live">
+<meta name="twitter:title" content="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
+<meta name="twitter:description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
 
 
 
@@ -156,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="images/avatar.gif/archives/2019/02/">
+  <link rel="canonical" href="images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/">
 
 
 
 
 
-  <title>归档 | Ricardo Blogs</title>
+  <title>嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？ | Ricardo Blogs</title>
   
 
 
@@ -181,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://ricardomlu01.github.io/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -317,107 +319,206 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 2 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RicardoMLu01">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ricardo Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/" itemprop="url">
-              
-                <span itemprop="name">嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-05T09:37:08+08:00" content="2019-02-05">
-          02-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T09:37:08+08:00">
+                2019-02-05
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-05T13:31:55+08:00">
+                2019-02-05
+              </time>
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/" class="leancloud_visitors" data-flag-title="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/" itemprop="url">
-              
-                <span itemprop="name">s3c2440之内存控制器与SDRAM学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-05T00:19:51+08:00" content="2019-02-05">
-          02-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介 </strong></h3><p>酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上吧。虽然在填报志愿的时候有稍微了解过这个专业，但是毕竟没有真正去体验过，所以并没有对这个专业有清醒的认识。电气工程这个专业属于强电（直接理解为高压就好），摆正心态认真学下去能学的好（数学基础要打好）。这个专业虽然是工科里比较注重实践与理论相结合的专业，但由于其专业的特殊性，很难找到实践的机会（场地与设备都不太允许）。每学期基本上都有实验课，但是基本上都是验证性实验，且这些实验室基本都不对学生开放（只能是实验课去摸摸，毕竟设备都挺贵的）。顺其自然，我大一大二基本上都是在搞自动化方向的东西，毕竟成本低，易入门，而且做出来东西后很有成就感（这点最关键），所以基本上就是按照现在大多数大学生一样开始从单片机入门了。转折点是大二暑假，当时参加了全国大学生电子设计大赛，我发现周围的同学都好强，动手能力和学习能力都超乎我的想象，这时候惊呼：原来周围的同学都这么努力呀！莫名感到压力倍增…在长达1个月的集中训练中，我也发现其中存在的一些问题（或者对我来说的疑惑）。</p>
+<h3 id="代码的创造能力不足"><a href="#代码的创造能力不足" class="headerlink" title="代码的创造能力不足"></a><strong>代码的创造能力不足</strong></h3><p>虽然周围同学都有很强的自学和动手能力（比如调通一个四轴小飞行器或者倒立摆），但是真正需要自己创造的代码并不多，基本上就是搬运其他人的代码。这样能够快速实现作品的功能，但是也存在一些隐患。例如：对MCU各种接口的运行机制并不是很清楚，而STM32的库函数的广泛使用更是加深了这种隐患。万丈高楼平地起，没有打好地基外表再华丽也只是危楼。而且很多大公司在招应届毕业生时也更注重基础知识的考核。</p>
+<h3 id="过于浮躁"><a href="#过于浮躁" class="headerlink" title="过于浮躁"></a><strong>过于浮躁</strong></h3><p>这也是现代人的一个通病，基本上搬来的代码能用就行，也不去考虑是否能够进一步去优化，没有进行深入思考和实时总结。这样以后在遇到相同的问题时又需要重新来过，其实是最没有效率的做法。</p>
+<h3 id="同质化严重"><a href="#同质化严重" class="headerlink" title="同质化严重"></a><strong>同质化严重</strong></h3><p>这里说的同质化并不是作品的同质化（作品虽然有时也类似…），而是能力的同质化。感觉具备这方面能力的人实在太多，谁没有在大学的时候玩过几年单片机？名校学生的能力会比你差？找工作在招聘网上这些单片机开发的职位的薪资也比较低，因为太多人会了，能力相当的情况下公司肯定选择省钱的方案咯。</p>
+<p>以上就是我大学期间的一些思想变化，它也逐渐让我清醒的认识自己，我想转嵌入式Linux驱动开发的决心俞加强烈。因为这些问题能够在嵌入式Linux驱动开发的学习过程中迎刃而解，毕竟环环相扣，若囫囵吞枣则寸步难行。啰嗦了这么久，终于要转入正题了。语言功底太差，各位请见谅（手动捂脸）。。。</p>
+<p>有人说嵌入式是一个坑，是一个无底洞。其实他们说的也没错，因为嵌入式涉及的知识太广泛了，需要花很多的时间去学习一些新的东西，而且还不一定能够立刻有成效，这也让很多想踏入嵌入式大门的初学者停下了脚步。然而，嵌入式的门槛固然较高，但是若学有所成，得到的薪资和发展空间也是纯单片机开发所不能及的。那来说说我为什么要选择嵌入式Linux驱动这个方向吧。</p>
+<h3 id="​具备一定理论与实践基础"><a href="#​具备一定理论与实践基础" class="headerlink" title="​具备一定理论与实践基础"></a>​<strong>具备一定理论与实践基础</strong></h3><p>我们的选择是会受环境因素影响的，本身专业就是电类专业，自然对硬件知识的接受能力比较强，加之在大学期间也经常捣鼓单片机，对各种硬件接口的基本原理还是比较熟悉的。相对于零基础的初学者，我们依然有一些明显的优势。</p>
+<h3 id="​驱动方向的人才相对紧缺"><a href="#​驱动方向的人才相对紧缺" class="headerlink" title="​驱动方向的人才相对紧缺"></a>​<strong>驱动方向的人才相对紧缺</strong></h3><p>比起纯IT方向的程序猿，往嵌入式Linux驱动开发方向走的人就少很多了，这也导致驱动方向的人才相对紧缺。当然这其中也与开发难度大、学习周期长、涉及范围广、成本高等因素有关。这也就形成了待遇较高的局面。况且最近发生的“美国限制向中兴出口芯片案”迫使我国加快芯片的自主研发，虽然芯片的研发还任重而道远，但已经是基本趋势，到那时嵌入式驱动工程师需求就更加大了。</p>
+<h3 id="​发展空间比较大和选择多"><a href="#​发展空间比较大和选择多" class="headerlink" title="​发展空间比较大和选择多"></a>​<strong>发展空间比较大和选择多</strong></h3><p>嵌入式产品多种多样，复杂多变，感觉只要与智能电子相关的产品都能叫嵌入式产品，这也就在一定程度上拓宽了嵌入式驱动方向的发展空间。同时，选择也变得相对较多。可以和志同道合的朋友一起创业，或者进入公司工作，总而言之，自己能力越强选择越多。同时，若想转IT上层业务软件方向相对比较容易，至少比上层业务转驱动方向容易很多。</p>
+<h3 id="​整体架构稳定"><a href="#​整体架构稳定" class="headerlink" title="​整体架构稳定"></a>​<strong>整体架构稳定</strong></h3><p>嵌入式驱动方向虽然入门难，但是整体架构比较稳定，并不会像IT上层软件一样需要根据客户需求不断更改自己的实施方案甚至完全推翻，可能就有更多的时间来提升自己的技术能力。</p>
+<p>接下来我还会分享一些自己学习嵌入式Linux驱动方向的学习笔记和心得体会，尽请期待。。。由于本人也是初学者，也有很多知识需要补充，可能有哪里说的不对望各位大佬指教，共同进步！! !写博客的初衷是想自己巩固一下所学知识，并且做一些知识输出分享给大家，何乐而不为呢！</p>
+<p>很喜欢下面的一段话：</p>
+<blockquote>
+<p>​    “对于优秀的程序员，其最优秀的品质是能够心平气和地学习与思考问题，透析代码背后的架构、原理和设计思想。没有思想的代码是垃圾代码，没有思想的程序员，只是在完成低水平重复建设的体力活。很多程序员从不过问自己写的代码最后在机器里面是怎么跑的，很多事情莫名其妙地发生了，很多bug莫名其妙地消失了……他们永远都在得过且过。”</p>
+</blockquote>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/" rel="next" title="s3c2440之内存控制器与SDRAM学习笔记">
+                <i class="fa fa-chevron-left"></i> s3c2440之内存控制器与SDRAM学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -425,6 +526,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -445,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -555,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的创造能力不足"><span class="nav-number">2.</span> <span class="nav-text">代码的创造能力不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过于浮躁"><span class="nav-number">3.</span> <span class="nav-text">过于浮躁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同质化严重"><span class="nav-number">4.</span> <span class="nav-text">同质化严重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​具备一定理论与实践基础"><span class="nav-number">5.</span> <span class="nav-text">​具备一定理论与实践基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​驱动方向的人才相对紧缺"><span class="nav-number">6.</span> <span class="nav-text">​驱动方向的人才相对紧缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​发展空间比较大和选择多"><span class="nav-number">7.</span> <span class="nav-text">​发展空间比较大和选择多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​整体架构稳定"><span class="nav-number">8.</span> <span class="nav-text">​整体架构稳定</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -702,6 +832,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
