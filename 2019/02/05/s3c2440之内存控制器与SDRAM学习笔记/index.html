@@ -98,7 +98,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -111,17 +111,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="images/avatar.gif/2019/02/03/hello-world/index.html">
+<meta property="og:title" content="s3c2440之内存控制器与SDRAM学习笔记">
+<meta property="og:url" content="images/avatar.gif/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/index.html">
 <meta property="og:site_name" content="Ricardo   Activity">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-03T14:11:09.100Z">
+<meta property="og:image" content="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github/blog/source/_posts/s3c2440之内存控制器与SDRAM学习笔记/1.png">
+<meta property="og:updated_time" content="2019-02-05T01:03:27.032Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="s3c2440之内存控制器与SDRAM学习笔记">
+<meta name="twitter:description" content="这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。  不同位宽设备的连接   ​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第">
+<meta name="twitter:image" content="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github/blog/source/_posts/s3c2440之内存控制器与SDRAM学习笔记/1.png">
 
 
 
@@ -151,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="images/avatar.gif/2019/02/03/hello-world/">
+  <link rel="canonical" href="images/avatar.gif/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/">
 
 
 
 
 
-  <title>Hello World | Ricardo   Activity</title>
+  <title>s3c2440之内存控制器与SDRAM学习笔记 | Ricardo   Activity</title>
   
 
 
@@ -326,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="images/avatar.gif/2019/02/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="images/avatar.gif/2019/02/05/s3c2440之内存控制器与SDRAM学习笔记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RicardoMLu01">
@@ -343,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">s3c2440之内存控制器与SDRAM学习笔记</h1>
         
 
         <div class="post-meta">
@@ -355,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-03T22:11:09+08:00">
-                2019-02-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T00:19:51+08:00">
+                2019-02-05
               </time>
             
 
@@ -365,6 +368,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -393,15 +418,18 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <pre><code>这节就记录一下我在学习内存**SDRAM**时候感觉需要理解的一些重点。
+</code></pre><ol>
+<li><strong>不同位宽设备的连接</strong></li>
+</ol>
+<p><img src="/02/05/s3c2440之内存控制器与SDRAM学习笔记/Github\blog\source\_posts\s3c2440之内存控制器与SDRAM学习笔记\1.png" alt=""></p>
+<p>​    上图连接方式是不同位宽设备与CPU的连接示意图，例如，CPU发出寻找第3字节的地址…0011,8位ROM接收到的是…0011（从内部结构可以看出是第4个字节）；16位ROM接收到的是…0001（从内部结构可以看出是第2个字节的部分）；32位ROM接收到的是…0000（从内部结构可以看出是第1个字节的部分）。这种连接方式能保证在连接不同位宽的ROM时能够找到对应的位置。16位或更高位ROM字节的具体位置还需要内存控制器近一步寻找。</p>
+<ol start="2">
+<li><p><strong>Nor Flash</strong></p>
+<p>Nor Flash的空间0x00000000 ~0x06000000，为128M（即每一个片选信号可以选择的空间是128M=2^27），也就需要A0、A1……A26，共27根地址线。CPU发出的32位地址线，内存控制器根据地址范围，片选上相应的bank，并将地址转化为27位。</p>
+<p>当选择Nor Flash启动时，CPU发出的指令的地址范围处于0x0000000 - 0x06000000，内存控制器就会使nGCS0处于低电平（片选引脚被选中），Nor Flash被选中。内存控制器根据不同的地址地址范围，发出不同的片选引脚，只有被片选引脚选中的芯片才能正常工作，不被选中的芯片就像不存在一样。</p>
+</li>
+</ol>
 
       
     </div>
@@ -417,27 +445,17 @@
 
     <footer class="post-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/03/你好，Hexo/" rel="prev" title="你好，Hexo">
-                你好，Hexo <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
         </div>
+      
+
+      
+      
+      
+
       
 
       
@@ -486,17 +504,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -513,7 +522,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +533,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -535,7 +544,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -599,22 +608,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
