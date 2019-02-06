@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="images/avatar.gif/"/>
-  <updated>2019-02-06T12:01:13.916Z</updated>
+  <updated>2019-02-06T12:11:55.685Z</updated>
   <id>images/avatar.gif/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="images/avatar.gif/2019/02/06/s3c2440%E4%B9%8BUART%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>images/avatar.gif/2019/02/06/s3c2440之UART学习笔记/</id>
     <published>2019-02-06T11:46:30.000Z</published>
-    <updated>2019-02-06T12:01:13.916Z</updated>
+    <updated>2019-02-06T12:11:55.685Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h3><p>UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：</p><ul><li><p>平时数据线处于空闲状态（1状态）；</p></li><li><p>当要发送数据时,UART改变TxD数据线的状态（变为0状态）并维持1位的时间，这样接收方检测到开始位后，在等待1.5位的时间就开始一位一位地检测数据线的状态得到所传输的数据；</p></li><li><p>UART一帧中可以有5、6、7或8位的数据，发送方一位一位地改变数据线的状态将他们发送出去，首先发送最低位；</p></li><li><p>如果使用校验功能，UART在发送完数据后，还要发送1位校验位。有两种校验方法：奇校验、偶校验——数据位连同校验位中，1的数据等于奇数或偶数；</p></li><li><p>最后，发送停止位，数据线恢复到空闲状态（1状态）。停止位的长度有3种：1位、1.5位、2位。</p></li></ul><p>下图演示了UART使用7个数据位、偶校验、2个停止位的格式传输字符‘A’（二进制值为0b1000001）时，TTL/COM逻辑电平对应的波形。</p><p><img src="/02/06/s3c2440之UART学习笔记/Github\blog\source\_posts\s3c2440之内存控制器与SDRAM学习笔记\1.png" alt="图1"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h3><p>UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：</p><ul><li><p>平时数据线处于空闲状态（1状态）；</p></li><li><p>当要发送数据时,UART改变TxD数据线的状态（变为0状态）并维持1位的时间，这样接收方检测到开始位后，在等待1.5位的时间就开始一位一位地检测数据线的状态得到所传输的数据；</p></li><li><p>UART一帧中可以有5、6、7或8位的数据，发送方一位一位地改变数据线的状态将他们发送出去，首先发送最低位；</p></li><li><p>如果使用校验功能，UART在发送完数据后，还要发送1位校验位。有两种校验方法：奇校验、偶校验——数据位连同校验位中，1的数据等于奇数或偶数；</p></li><li><p>最后，发送停止位，数据线恢复到空闲状态（1状态）。停止位的长度有3种：1位、1.5位、2位。</p></li></ul><p>下图演示了UART使用7个数据位、偶校验、2个停止位的格式传输字符‘A’（二进制值为0b1000001）时，TTL/COM逻辑电平对应的波形。</p><p><img src="/02/06/s3c2440之UART学习笔记/Github\blog\source\_posts\s3c2440之UART学习笔记\1.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
