@@ -186,8 +186,8 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 13px;
-  line-height: 2;
+  font-size: 14px;
+  line-height: 3;
   color: #555;
   background: #eee;
 }
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 h1,
@@ -226,51 +226,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 27px;
+  font-size: 28px;
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 23px;
+    font-size: 24px;
   }
 }
 h2 {
-  font-size: 25px;
+  font-size: 26px;
 }
 @media (max-width: 767px) {
   h2 {
-    font-size: 21px;
+    font-size: 22px;
   }
 }
 h3 {
-  font-size: 23px;
+  font-size: 24px;
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 19px;
+    font-size: 20px;
   }
 }
 h4 {
-  font-size: 21px;
+  font-size: 22px;
 }
 @media (max-width: 767px) {
   h4 {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 h5 {
-  font-size: 19px;
+  font-size: 20px;
 }
 @media (max-width: 767px) {
   h5 {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 h6 {
-  font-size: 17px;
+  font-size: 18px;
 }
 @media (max-width: 767px) {
   h6 {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 p {
@@ -486,10 +486,10 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 10px;
-  color: #c5c8c6;
-  background: #1d1f21;
-  line-height: 1.6;
+  font-size: 13px;
+  color: #4d4d4c;
+  background: #f7f7f7;
+  line-height: 1.8;
 }
 pre,
 code {
@@ -501,14 +501,14 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 13px;
 }
 pre {
   padding: 10px;
 }
 pre code {
   padding: 0;
-  color: #c5c8c6;
+  color: #4d4d4c;
   background: none;
   text-shadow: none;
 }
@@ -531,7 +531,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #c5c8c6;
+  color: #4d4d4c;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -545,23 +545,23 @@ pre code {
 }
 .highlight figcaption a {
   float: right;
-  color: #c5c8c6;
+  color: #4d4d4c;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #c5c8c6;
+  border-bottom-color: #4d4d4c;
 }
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #888f96;
+  color: #869194;
   text-align: right;
-  background-color: #000;
+  background-color: #eff2f3;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #1d1f21;
+  background-color: #f7f7f7;
 }
 .highlight .line {
   height: 20px;
@@ -579,16 +579,16 @@ pre code {
   border: none;
 }
 pre .deletion {
-  background: #008000;
+  background: #fdd;
 }
 pre .addition {
-  background: #800000;
+  background: #dfd;
 }
 pre .meta {
-  color: #b294bb;
+  color: #8959a8;
 }
 pre .comment {
-  color: #969896;
+  color: #8e908c;
 }
 pre .variable,
 pre .attribute,
@@ -602,7 +602,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c66;
+  color: #c82829;
 }
 pre .number,
 pre .preprocessor,
@@ -611,7 +611,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #de935f;
+  color: #f5871f;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -624,11 +624,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #b5bd68;
+  color: #718c00;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #8abeb7;
+  color: #3e999f;
 }
 pre .function,
 pre .python .decorator,
@@ -638,11 +638,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #81a2be;
+  color: #4271ae;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #b294bb;
+  color: #8959a8;
 }
 .full-image.full-image.full-image.full-image {
   border: none;
@@ -1129,7 +1129,7 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1238,7 +1238,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1642,6 +1642,13 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1935,7 +1942,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cbfff1;
+  background: #c7ebff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3281,4 +3288,38 @@ header.post-header {
 .posts-expand .post-eof {
   margin: 30px;
   background-color: rgba(255,255,255,0);
+}
+.highlight {
+  position: relative;
+}
+.btn-copy {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #333;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  padding: 2px 6px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  opacity: 0;
+}
+.btn-copy span {
+  margin-left: 5px;
+}
+.highlight:hover .btn-copy {
+  opacity: 1;
 }

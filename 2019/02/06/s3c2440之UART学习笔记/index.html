@@ -10,6 +10,21 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -104,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="Linux,s3c2440,">
+  <meta name="keywords" content="Linux,s3c2440,Uart,">
 
 
 
@@ -118,19 +133,25 @@
 
 
 <meta name="description" content="原理解析UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：  平时数据线处于空闲状态（1状态）；  当要发送数据时,UART改变TxD数据线的状态（变为0状态）并维持1位的时间，这样接收方检测到开始位后">
-<meta name="keywords" content="Linux,s3c2440">
+<meta name="keywords" content="Linux,s3c2440,Uart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="s3c2440之UART学习笔记">
 <meta property="og:url" content="images/avatar.gif/2019/02/06/s3c2440之UART学习笔记/index.html">
 <meta property="og:site_name" content="Ricardo Blogs">
 <meta property="og:description" content="原理解析UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：  平时数据线处于空闲状态（1状态）；  当要发送数据时,UART改变TxD数据线的状态（变为0状态）并维持1位的时间，这样接收方检测到开始位后">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/02/06/s3c2440之UART学习笔记/Github/blog/source/_posts/s3c2440之UART学习笔记/1.jpg">
-<meta property="og:updated_time" content="2019-02-06T12:11:55.685Z">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/1.jpg">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/2.png">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/3.png">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/4.png">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/5.png">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/6.png">
+<meta property="og:image" content="/2019/02/06/s3c2440之UART学习笔记/7.png">
+<meta property="og:updated_time" content="2019-02-07T07:38:58.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="s3c2440之UART学习笔记">
 <meta name="twitter:description" content="原理解析UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：  平时数据线处于空闲状态（1状态）；  当要发送数据时,UART改变TxD数据线的状态（变为0状态）并维持1位的时间，这样接收方检测到开始位后">
-<meta name="twitter:image" content="/02/06/s3c2440之UART学习笔记/Github/blog/source/_posts/s3c2440之UART学习笔记/1.jpg">
+<meta name="twitter:image" content="/2019/02/06/s3c2440之UART学习笔记/1.jpg">
 
 
 
@@ -380,8 +401,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-06T20:11:55+08:00">
-                2019-02-06
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-07T15:38:58+08:00">
+                2019-02-07
               </time>
             
           </span>
@@ -399,8 +420,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">里尼克斯</span>
+                  <a href="/categories/s3c2440学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">s3c2440学习笔记</span>
                   </a>
                 </span>
 
@@ -457,7 +478,7 @@
       
 
       
-        <h3 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h3><p>UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：</p>
+        <h2 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h2><p>UART（Universal Asynchronous Receiver/Transmitter，通用异步接收/发送装置）用于异步通信，可以实现全双工发送和接收。它不仅可以实现不同嵌入式系统之间的通信，还可以实现与PC之间的通信。数据传输流程如下：</p>
 <ul>
 <li><p>平时数据线处于空闲状态（1状态）；</p>
 </li>
@@ -471,8 +492,26 @@
 </li>
 </ul>
 <p>下图演示了UART使用7个数据位、偶校验、2个停止位的格式传输字符‘A’（二进制值为0b1000001）时，TTL/COM逻辑电平对应的波形。</p>
-<p><img src="/02/06/s3c2440之UART学习笔记/Github\blog\source\_posts\s3c2440之UART学习笔记\1.jpg" alt=""></p>
-
+<img src="/2019/02/06/s3c2440之UART学习笔记/1.jpg" title="UART逻辑电平波形">
+<p>s3c2440提供了三个UART端口，它们都可以通过查询、中断和DMA方式传输数据，而且每个UART都分别有一个64个字节的接收FIFO和一个64个字节的发送FIFO。如下图所示：每个UART包含一个波特率发生器、发送器、接收器和一个控制单元。波特率发生器可以由PCLK、FCLK/n或UEXTCLK（外部输入时钟）时钟驱动。UART通过使用系统时钟可以支持最高115.2Kbps的比特率。如果是使用外部器件提供UEXTCLK的UART,则UART可以运行在更高的速度。发送器和接收器各包含一个64字节的FIFO和数据移位器。要发送数据时，先将数据写入到FIFO接着在发送前复制到发送移位器中，随后将数据从发送数据引脚(TXDn)移出；接收数据时，从接收数据引脚(RXDn)移入接收移位器，接着从移位器复制到FIFO。</p>
+<img src="/2019/02/06/s3c2440之UART学习笔记/2.png">
+<h2 id="寄存器配置"><a href="#寄存器配置" class="headerlink" title="寄存器配置"></a>寄存器配置</h2><ul>
+<li><h4 id="配置串口引脚（GPHCON）及内部上拉（GPHUP）"><a href="#配置串口引脚（GPHCON）及内部上拉（GPHUP）" class="headerlink" title="配置串口引脚（GPHCON）及内部上拉（GPHUP）"></a><strong>配置串口引脚（GPHCON）及内部上拉（GPHUP）</strong></h4></li>
+</ul>
+<p>注：在串口开始前的空闲状态处于高电平，开始位为低电平，需要进行内部上拉保证空闲状态为高电平</p>
+<img src="/2019/02/06/s3c2440之UART学习笔记/3.png">
+<ul>
+<li><h4 id="设置波特率及选择时钟源"><a href="#设置波特率及选择时钟源" class="headerlink" title="设置波特率及选择时钟源"></a><strong>设置波特率及选择时钟源</strong></h4><img src="/2019/02/06/s3c2440之UART学习笔记/4.png">
+<img src="/2019/02/06/s3c2440之UART学习笔记/5.png">
+<img src="/2019/02/06/s3c2440之UART学习笔记/6.png">
+</li>
+<li><h4 id="设置数据格式"><a href="#设置数据格式" class="headerlink" title="设置数据格式"></a><strong>设置数据格式</strong></h4><img src="/2019/02/06/s3c2440之UART学习笔记/7.png">
+</li>
+</ul>
+<h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><h4 id="uart-h"><a href="#uart-h" class="headerlink" title="uart.h"></a><strong>uart.h</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line">1 #ifndef     _UART_H                // 如果某个文件第一次包含这个头文件，_UART_H这个宏没有定义时</span><br><span class="line">2 #define     _UART_H                // 定义_UART_H这个宏</span><br><span class="line">3 </span><br><span class="line">4 void uart0_init(void);</span><br><span class="line">5 int putchar(int c);</span><br><span class="line">6 int getchar(void);</span><br><span class="line">7 int puts(const char *s);</span><br><span class="line">8 </span><br><span class="line">9 #endif</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<h4 id="uart-c"><a href="#uart-c" class="headerlink" title="uart.c"></a><strong>uart.c</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"s3c2440_soc.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 115200,8n1 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uart0_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">/* 设置引脚用于串口 */</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* GPH2,3用于TxD0, RxD0 */</span></span><br><span class="line">	GPHCON &amp;= ~((<span class="number">3</span>&lt;&lt;<span class="number">4</span>) | (<span class="number">3</span>&lt;&lt;<span class="number">6</span>));  <span class="comment">//寄存器4-7位清0</span></span><br><span class="line">	GPHCON |= ((<span class="number">2</span>&lt;&lt;<span class="number">4</span>) | (<span class="number">2</span>&lt;&lt;<span class="number">6</span>));   <span class="comment">//4-7位1010，其余位为1</span></span><br><span class="line"></span><br><span class="line">	GPHUP &amp;= ~((<span class="number">1</span>&lt;&lt;<span class="number">2</span>) | (<span class="number">1</span>&lt;&lt;<span class="number">3</span>));  <span class="comment">/* 使能内部上拉为高电平，低电平开始位 */</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 设置波特率 */</span></span><br><span class="line">	<span class="comment">/* UBRDIVn = (int)( UART clock / ( buad rate x 16) ) –1</span></span><br><span class="line"><span class="comment">	 *  UART clock = 50M</span></span><br><span class="line"><span class="comment">	 *  UBRDIVn = (int)( 50000000 / ( 115200 x 16) ) –1 = 26</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"></span><br><span class="line">	UCON0 = <span class="number">0x00000005</span>; <span class="comment">/* PCLK,中断/查询模式 */</span></span><br><span class="line">	UBRDIV0 = <span class="number">26</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 设置数据格式 */</span></span><br><span class="line">	ULCON0 = <span class="number">0x00000003</span>; <span class="comment">/* 8n1: 8个数据位, 无较验位, 1个停止位 */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*  */</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">putchar</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">/* UTRSTAT0 */</span></span><br><span class="line">	<span class="comment">/* UTXH0 */</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!(UTRSTAT0 &amp; (<span class="number">1</span>&lt;&lt;<span class="number">2</span>)));   <span class="comment">//当发送缓冲寄存器和发送移位器不是空的时候，循环等待</span></span><br><span class="line">	UTXH0 = (<span class="keyword">unsigned</span> <span class="keyword">char</span>)c;  <span class="comment">//反之，当上一个发送完了，再向发送缓冲寄存器写入字符(这里是按单个字节发送)</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getchar</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!(UTRSTAT0 &amp; (<span class="number">1</span>&lt;&lt;<span class="number">0</span>)));  <span class="comment">//当接收缓冲寄存器是空的时候，循环等待</span></span><br><span class="line">	<span class="keyword">return</span> URXH0;                  <span class="comment">//当接收缓冲寄存器非空的时候，返回接收缓冲寄存器得到的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">puts</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (*s)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(*s);</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<h4 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a><strong>main.c</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line"> <span class="number">1</span> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"s3c2440_soc.h"</span></span></span><br><span class="line"> <span class="number">2</span> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uart.h"</span></span></span><br><span class="line"> <span class="number">3</span> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"> 4 </span>&#123;    <span class="keyword">unsigned</span> <span class="keyword">char</span> c;</span><br><span class="line"> <span class="number">5</span>     uart0_init();</span><br><span class="line"> <span class="number">6</span>     <span class="built_in">puts</span>(<span class="string">"Hello,world!\n\r"</span>);</span><br><span class="line"> <span class="number">7</span>     <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line"> <span class="number">8</span>     &#123;</span><br><span class="line"> <span class="number">9</span>         c=getchar();               <span class="comment">// 从PC键盘上得到输入字符(串 )</span></span><br><span class="line"><span class="number">10</span>         <span class="keyword">if</span> (c == <span class="string">'\r'</span>)              <span class="comment">//  换行处理 ，不论输入\n或者\r,都会换行并使光标到行首 </span></span><br><span class="line"><span class="number">11</span>         &#123;</span><br><span class="line"><span class="number">12</span>             <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line"><span class="number">13</span>         &#125;</span><br><span class="line"><span class="number">14</span>         <span class="keyword">if</span> (c == <span class="string">'\n'</span>)</span><br><span class="line"><span class="number">15</span>         &#123;</span><br><span class="line"><span class="number">16</span>             <span class="built_in">putchar</span>(<span class="string">'\r'</span>);</span><br><span class="line"><span class="number">17</span>         &#125;</span><br><span class="line"><span class="number">18</span>         <span class="built_in">putchar</span>(c);              <span class="comment">// 输出得到的字符(串 )到PC，PC屏幕会显示串口传过来的字符(串 )</span></span><br><span class="line"><span class="number">19</span>     &#125;    </span><br><span class="line"><span class="number">20</span>     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="number">21</span> &#125;</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<h4 id="makefile"><a href="#makefile" class="headerlink" title="makefile"></a><strong>makefile</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line">all:</span><br><span class="line">    arm-linux-gcc -c -o led.o led.c</span><br><span class="line">    arm-linux-gcc -c -o uart.o uart.c</span><br><span class="line">    arm-linux-gcc -c -o main.o main.c</span><br><span class="line">    arm-linux-gcc -c -o start.o start.S</span><br><span class="line">    arm-linux-ld -Ttext <span class="number">0</span> start.o led.o uart.o main.o -o uart.elf</span><br><span class="line">    arm-linux-objcopy -O binary -S uart.elf uart.bin</span><br><span class="line">    arm-linux-objdump -D uart.elf &gt; uart.dis</span><br><span class="line">clean:</span><br><span class="line">    rm *.bin *.o *.elf *.dis</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -484,6 +523,24 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    RicardoMLu01
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="images/avatar.gif/2019/02/06/s3c2440之UART学习笔记/" title="s3c2440之UART学习笔记">images/avatar.gif/2019/02/06/s3c2440之UART学习笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
@@ -492,6 +549,8 @@
             <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
             <a href="/tags/s3c2440/" rel="tag"><i class="fa fa-tag"></i> s3c2440</a>
+          
+            <a href="/tags/Uart/" rel="tag"><i class="fa fa-tag"></i> Uart</a>
           
         </div>
       
@@ -513,6 +572,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/07/构建技术知识体系，让自己含金量更高/" rel="prev" title="构建技术知识体系，让自己含金量更高">
+                构建技术知识体系，让自己含金量更高 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -594,7 +657,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,10 +667,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -616,7 +679,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -649,21 +712,21 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/" target="_blank" title="֪知乎">
+                    <a href="https://weibo.com/" target="_blank" title="微博">
                       
-                        <i class="fa fa-fw fa-ioxhost"></i></a>
+                        <i class="fa fa-fw fa-weibo"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.baidu.com/" target="_blank" title="Google">
+                    <a href="https://wx.qq.com/" target="_blank" title="微信">
                       
-                        <i class="fa fa-fw fa-google"></i></a>
+                        <i class="fa fa-fw fa-weixin"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                    <a href="https://www.qq.com/" target="_blank" title="企鹅">
                       
-                        <i class="fa fa-fw fa-skype"></i></a>
+                        <i class="fa fa-fw fa-qq"></i></a>
                   </span>
                 
             </div>
@@ -696,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理解析"><span class="nav-number">1.</span> <span class="nav-text">原理解析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理解析"><span class="nav-number">1.</span> <span class="nav-text">原理解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器配置"><span class="nav-number">2.</span> <span class="nav-text">寄存器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置串口引脚（GPHCON）及内部上拉（GPHUP）"><span class="nav-number">2.0.1.</span> <span class="nav-text">配置串口引脚（GPHCON）及内部上拉（GPHUP）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置波特率及选择时钟源"><span class="nav-number">2.0.2.</span> <span class="nav-text">设置波特率及选择时钟源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置数据格式"><span class="nav-number">2.0.3.</span> <span class="nav-text">设置数据格式</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#程序"><span class="nav-number">3.</span> <span class="nav-text">程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#uart-h"><span class="nav-number">3.0.1.</span> <span class="nav-text">uart.h</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uart-c"><span class="nav-number">3.0.2.</span> <span class="nav-text">uart.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#main-c"><span class="nav-number">3.0.3.</span> <span class="nav-text">main.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#makefile"><span class="nav-number">3.0.4.</span> <span class="nav-text">makefile</span></a></li></ol></li></div>
             
 
           </div>
@@ -1361,5 +1424,8 @@
 
   
 
+
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 </html>

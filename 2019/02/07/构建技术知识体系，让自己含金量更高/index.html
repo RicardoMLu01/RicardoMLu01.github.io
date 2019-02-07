@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Plan,Skill,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ricardo Blogs" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="作者简介：安晓辉，10多年开发经验，曾任软件开发工程师、项目经理、研发经理、技术总监等岗位，著有《Qt Quick核心编程》、《Qt on Android核心编程》、《你好哇，程序员》等书籍。“斜杠青年”：技术专家 / 职业规划师">
+<meta name="keywords" content="Plan,Skill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建技术知识体系，让自己含金量更高">
+<meta property="og:url" content="images/avatar.gif/2019/02/07/构建技术知识体系，让自己含金量更高/index.html">
+<meta property="og:site_name" content="Ricardo Blogs">
+<meta property="og:description" content="作者简介：安晓辉，10多年开发经验，曾任软件开发工程师、项目经理、研发经理、技术总监等岗位，著有《Qt Quick核心编程》、《Qt on Android核心编程》、《你好哇，程序员》等书籍。“斜杠青年”：技术专家 / 职业规划师">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20170105192730178?">
+<meta property="og:image" content="https://img-blog.csdn.net/20160503062348496">
+<meta property="og:image" content="https://img-blog.csdn.net/20170106162828798?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFpeXV6aG9uZzIwMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20170105192022988?">
+<meta property="og:updated_time" content="2019-02-07T07:40:13.001Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建技术知识体系，让自己含金量更高">
+<meta name="twitter:description" content="作者简介：安晓辉，10多年开发经验，曾任软件开发工程师、项目经理、研发经理、技术总监等岗位，著有《Qt Quick核心编程》、《Qt on Android核心编程》、《你好哇，程序员》等书籍。“斜杠青年”：技术专家 / 职业规划师">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20170105192730178?">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="images/avatar.gif/2019/02/07/构建技术知识体系，让自己含金量更高/">
+
+
+
+
+
+  <title>构建技术知识体系，让自己含金量更高 | Ricardo Blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://ricardomlu01.github.io/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ricardo Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">NOTE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="images/avatar.gif/2019/02/07/构建技术知识体系，让自己含金量更高/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RicardoMLu01">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ricardo Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">构建技术知识体系，让自己含金量更高</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-07T14:21:18+08:00">
+                2019-02-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-07T15:40:13+08:00">
+                2019-02-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习规划-方法/" itemprop="url" rel="index">
+                    <span itemprop="name">学习规划/方法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/07/构建技术知识体系，让自己含金量更高/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/07/构建技术知识体系，让自己含金量更高/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/07/构建技术知识体系，让自己含金量更高/" class="leancloud_visitors" data-flag-title="构建技术知识体系，让自己含金量更高">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog" data-mod="popu_307" data-dsm="post"><br>                                            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-2c6a5211c9.css"><br>                        <div class="htmledit_views" id="content_views"><br>                <blockquote style="font-size:14px;border-left-width:5px;border-left-style:solid;border-left-color:rgba(128,128,128,.0745098);color:rgb(51,51,51);font-family:'microsoft yahei', arial;line-height:27.2px;text-align:justify;background:rgb(247,247,247);"><p>作者简介：<a href="http://my.csdn.net/foruok" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">安晓辉</a>，10多年开发经验，曾任软件开发工程师、项目经理、研发经理、技术总监等岗位，著有《Qt Quick核心编程》、《Qt on Android核心编程》、《你好哇，程序员》等书籍。“斜杠青年”：技术专家 / 职业规划师 /&nbsp;<a href="http://blog.csdn.net/foruok" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">图书作者</a>&nbsp;/&nbsp;<a href="http://www.zaih.com/mentor/84779110/" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">在行</a>西安首批行家 /<a href="http://fd.zaih.com/tutor/587470986" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">分答职场类答主</a>&nbsp;/微信公众号“程序视界”（id：programmer_sight）/ LinkedIn受邀自媒体。</p><p>责编：CSDN知识图谱小助手</p></blockquote><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">这个时代，信息极大丰富，人每时每刻都被各种各样的知识、信息轰炸着。如何有效的选择对自己有价值的知识，如何构建一个<span style="font-weight:700;">独属于自己的知识体系</span>并让它为自己创造价值，变得越来越重要。只有知识经过了你的选择和应用，内化为自己的隐性经验，纳入到你的知识体系中，才能真正地为你创造财富。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">怎样才能建立自己的知识体系呢？</span></p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>选择方向，设定目标</li><li>学习、实践、输出、内化</li><li>同主题扩散</li><li>运用工具整理记录知识图谱</li><li>迭代与更新知识图谱</li></ul><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t0"></a><span style="font-weight:700;">有目标，才有知识体系</span></h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">如果只能选择一个方向，你希望在什么方向上做到出类拔萃？&nbsp;<br>对这个问题的思考，会帮助你找到自己的方向，进而有效地去学习知识。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">构建个人知识体系的第一步是定位</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">知识体系和我们的个人目标与关注点有关，你的取舍决定了你的关注点。每个人都需要根据自己的目标和关注点来建立自己的知识体系。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">简单的说，比如你想成为像Linux内核创建者Linus Torvalds那样的人，在Linux操作系统方面做出卓越的贡献，那你就能迅速定位你的知识系统的大方向——<a href="http://lib.csdn.net/base/linux" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Linux操作系统开发</a>。&nbsp;<br>比如你想成为像秋叶大叔（秋叶PPT）那样的人……&nbsp;<br>比如你想成为像马云那样的企业家……</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">这个探索过程可能很慢，需要几个月或者几年，也可能只要一个瞬间。无论长短，最重要的是，你必须有想象力，愿意成为自己这艘即将远航的旗舰的舵手。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">推荐几本书有助于你的<span style="font-weight:700;">自我探索</span>：</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzUzNzYyNA==&amp;mid=401209962&amp;idx=1&amp;sn=943ad59f92d64b4bf06343d675d6d210&amp;scene=21#wechat_redirect" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">发现你的天赋</a>&nbsp;<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzUzNzYyNA==&amp;mid=402553691&amp;idx=1&amp;sn=9979cd10dd5057060b3728d09b3577ea&amp;scene=21#wechat_redirect" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">持续的幸福</a>&nbsp;<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzUzNzYyNA==&amp;mid=2650651479&amp;idx=1&amp;sn=ea4f5915258e9b5b3de71db6d1f627f6&amp;chksm=83a80360b4df8a767d95f165b5be3652146b4e68b1a2d35c3b33fa77e48f1de3e338a9ff3efe&amp;scene=21#wechat_redirect" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">你的生命有什么可能</a>&nbsp;<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMzUzNzYyNA==&amp;mid=2650651439&amp;idx=1&amp;sn=ca2a3f8addba935bd7ff158f7f4427ca&amp;chksm=83a80318b4df8a0e48decd8742a1c105446d23138d16dd1574f13aa5bec6ccc0f75a3e9668dc&amp;scene=21#wechat_redirect" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">精进：如何成为一个很厉害的人</a></p><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t1"></a><span style="font-weight:700;">知识的内化</span></h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">一个人的能力分三个层次：</p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li><span style="font-weight:700;">资源</span>：比如知识、技能、经验、精力、人脉等。</li><li><span style="font-weight:700;">应用流程</span>，即使用资源解决问题的能力：做事的方法、流程、策略等，整合应用资源创造价值的能力。</li><li><span style="font-weight:700;">价值取向</span>，即你觉得什么事情重要，什么事情不重要。</li></ul><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">知识是一种资源，是固化的，必须经过你的应用流程，才能<span style="font-weight:700;">内化为自己的经验</span>，帮助你解决工作与生活中的问题，为你创造价值。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">只有知识，没有内化，那结果不堪一击。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">像神仙姐姐王语嫣，牢记每一种武林秘籍，但是一招也打不出来，与人对战只有被秒杀的份儿。&nbsp;<br>像《围城》里的方鸿渐，也学习了很多乱七八糟的知识，但赵辛楣评价他说：“你是个好人，但一无是处”，这也是因为他涉猎很多都不能落地应用创造价值。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">我见过一些软件开发者，说起编程语言里的某个知识点，哪哪儿都清楚，但让他写程序，就是一团麻乱，根本想不起来要用什么，要到处问，List怎么用，StringBuilder怎么用，ListView该怎么用，问半天也还是不会用……</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">所以我们一定要把<span style="font-weight:700;">显性的知识内化为自己的隐性知识</span>，变成自己的能力。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">学习现状</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">很多知识都经由前人的总结显性化了，固化在书本、网络、视频等载体上，我们就从这些载体上开始学习。这是第一步，它让我们知道有这样一个知识、这个知识是什么、这个知识可以用来解决什么问题。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">不要停，你到了这一步千万不要停，要接着去琢磨：</p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>这个知识对我有什么用？</li><li>我过往的工作与生活中，哪些经历、经验可以和这个知识关联起来？</li><li>在将来，这个知识能怎样帮助我改善自己的工作？</li></ul><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">很多人看书、看视频、听演讲，根本不琢磨，只是被动接收，只是“浏览”到有这么个东西，“哦”一声就过去了。所以，他们很难有进一步的收获。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">很多人过度依赖搜索引擎，比如ListView不会用，Google一下，拷贝粘贴一段代码来解决自己的问题。但是解决之后往往就放下了，不再琢磨这段代码为什么能解决问题、我为什么没想到、下次我怎样才能自己来解决问题，这样做的后果就是，遇到问题永远在问搜索引擎，永远也培养不出独立思考并解决问题的能力。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">如何内化</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">如果你能够把自己应用知识解决问题的过程，收获的经验，再转化出来，分享给别人，帮助别人解决问题，那你对知识的掌握将更进一步。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">这也是CSDN上很多博主的做法：用输出倒逼输入。也是我的做法，我的公众号“程序视界”（id：programmer_sight）每周发布三篇原创文章，就是一种倒逼机制，我要逼着自己通过输出的方式来内化知识。现在形成习惯，基本上没什么压力了。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">输出是内化知识的最有效的途径当你准备输出时，会考虑很多很多，比你自己使用知识时考虑的要多很多，比如怎样讲明白、比如怎样让结构清晰、比如怎样设计示例辅助说明、比如这个知识点与哪些关联、比如哪些关联的知识点必须讲清楚……所有这些，会让你进一步思考知识，会让你系统化你的知识，最终会加深你对知识的理解与应用。</p><hr style="border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-top-color:rgb(238,238,238);color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t2"></a><span style="font-weight:700;">同主题扩散</span></h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">很少有知识是孤立的，也很少有哪个方向只需要一种知识就可以真正解决问题。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">比如你做桌面客户端产品开发，选择<a href="http://lib.csdn.net/base/cplusplus" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank"><span style="font-weight:700;">C++</span>语言</a>作为主要开发语言，但C++语言本身绝对完成不了这个任务，你必须在同一个主题内寻找其他的支撑，比如Qt，比如MFC，比如wxWidgets。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">这正是我们构建知识体系必须要经历的过程：<span style="font-weight:700;">在同一主题不断挖掘相关知识，完善你的知识图谱。</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">比如我曾画过一张<span style="font-weight:700;"><a href="http://lib.csdn.net/my/chart/C++%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">学习C++的图谱</a></span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><img src="https://img-blog.csdn.net/20170105192730178?" alt="这里写图片描述" title="" style="border:0px;vertical-align:middle;display:table;"></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">从图上就可以看出来，C++是知识的中心，围绕着它有很多相关联的知识。那么，怎么发现同一主题内还有哪些知识需要学习呢？比如学习C++，多问问下面的问题会有帮助：</p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>为了解决A问题，除了这个知识，还需要哪些知识、工具？</li><li>这个知识是由什么知识发展来的，什么新的发展？</li><li>关于这个知识，有哪些书和资料？</li><li>在这个领域，有哪些大咖，他们在学什么？</li><li>关于这个知识，还有哪些是我不知道的？ 查看C++知识库</li></ul><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">如果你能不断思考这些问题，就能不断找到需要进一步学习的知识，就能不断扩大自己的学习区，最终就能不断地丰富自己的知识体系。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">好啦，到现在为止，我们介绍了构建个人知识体系的三个基本的步骤：确立方向，内化和同主题扩散。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">接下来我们介绍让我们的<span style="font-weight:700;"><a href="http://lib.csdn.net/home" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">知识库</a></span>持续发展永葆青春的两个步骤：记录与迭代。</p><hr style="border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-top-color:rgb(238,238,238);color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t3"></a>使用工具固化你的知识库</h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">大脑容量有限，必须借助工具将我们的知识系统记录下来。有非常多的工具可以使用，比如：</p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>笔记类软件</li><li><a href="http://blog.csdn.net/" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank"><span style="font-weight:700;">博客</span></a></li><li><a href="https://en.wikipedia.org/wiki/Wiki" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank"><span style="font-weight:700;">wiki</span></a></li><li><a href="http://lib.csdn.net/home" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">各种知识库系统，<span style="font-weight:700;">CSDN知识库</span></a></li><li>图书，电子书&nbsp;<br>……</li></ul><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">在上面这些工具中，其实图书更多时候是你系统化自己知识的一种产出物，比如我在CSDN博客发布的文章多了，就结集出版了几本书：《Qt Quick核心编程》、《你好哇，程序员》。电子书也是类似的。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">在选择工具系统时，遵循下面的原则：</p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>易用，多终端同步</li><li>便于检索</li><li>能呈现知识系统的结构</li></ul><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">每个人都可能使用不同的工具来固化自己的知识库，不必追求与别人一致，我目前使用有道云笔记、<a href="http://blog.csdn.net/foruok/article/details/54014938" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">CSDN博客</a>、<a href="http://lib.csdn.net/home" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">CSDN知识库</a>、脑图、图书等工具来记录知识。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">脑图工具我用的是XMind的社区版，这是我学习Qt时绘制的：</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><img src="https://img-blog.csdn.net/20160503062348496" alt="这里写图片描述" title="" style="border:0px;vertical-align:middle;display:table;"></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">脑图的好处是你可以很方便的记录、分支、补充，也能很好体现知识的关联。但它不方便的地方在于，你往往只能记录一些关键词，大量的知识或者系统化的文章不太方便体现。</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">那后者，可以使用CSDN博客与<a href="http://lib.csdn.net/home" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">CSDN知识库</a>的组合来完成。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">我就在CSDN博客上发表文章，分享我对某方面知识的见解，然后使用<span style="font-weight:700;">CSDN知识库把这些文章链接起来，整合成一个系统。</span>这种方式的好处显而易见：方便，多终端同步，系统化，利于更新迭代。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">个人图谱样例</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><img src="https://img-blog.csdn.net/20170106162828798?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFpeXV6aG9uZzIwMTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图片描述" title="" style="border:0px;vertical-align:middle;display:table;"></p><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>@code_xzh 的<span style="font-weight:700;"><a href="http://lib.csdn.net/xiangzhihong8/chart/React%20Native" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">React Native图谱</a></span></li><li>@刘玉刚 的<span style="font-weight:700;"><a href="http://lib.csdn.net/BaiHuaXiu123/chart/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B9%8B%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9B%BE%E8%B0%B1%E4%B8%AD%E7%BA%A7" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">人工智能中级图谱</a></span></li><li>@张智超 的&nbsp;<span style="font-weight:700;"><a href="http://lib.csdn.net/qq_28832135/chart/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">微信开发，小程序图谱</a></span></li></ul><hr style="border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-top-color:rgb(238,238,238);color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><ul style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><li>CSDN官网之<a href="http://lib.csdn.net/base/reactnative/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank"><span style="font-weight:700;">React Native</span></a></li><li>CSDN官网之<a href="http://lib.csdn.net/base/ai/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank"><span style="font-weight:700;">人工智能</span></a></li><li>CSDN官网<span style="font-weight:700;"><a href="http://lib.csdn.net/base/wechat/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">微信开发</a></span></li></ul><hr style="border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-top-color:rgb(238,238,238);color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t4"></a><span style="font-weight:700;">迭代与更新</span></h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">当我们将自己某方面知识构建成库、系统化之后，记录在某个载体上，接下来面临的就是知识的更新。</span></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">每一种知识都可能会不断发展、更新，都可能随着时代的发展而变得过时，所以我们要不断更新自己的知识体系。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">比如你原来在<span style="font-weight:700;"><a href="http://lib.csdn.net/base/cplusplus" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">C++</a></span>方便积累了一些知识，使用的是C++98的标准，但现在C++11在普及，C++17马上出来，你就需要更新。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">如果我们不能定期更新自己的知识库，那我们就会慢慢落后于时代，越来越没有价值，也会失去很多机会。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">举个简单的例子，学Java的朋友们，当2007年Google发布Android系统时，有多少人抓住机会，把Android开发框架纳入到了自己的知识体系中？如果你那时开始做Android，就赶上了移动开发的大潮，现在不是大神也是大咖。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;">查看<a href="http://lib.csdn.net/base/java/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Java知识体系</a>&gt;&gt;&gt;</span>&nbsp;<span style="font-weight:700;"><a href="http://lib.csdn.net/base/javase/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Java SE图谱</a>，<a href="http://lib.csdn.net/base/javaee/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Java EE图谱</a></span>&nbsp;<br><span style="font-weight:700;">查看<a href="http://lib.csdn.net/base/android/structure" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Android知识体系</a>&gt;&gt;&gt;</span></p><hr style="border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-top-color:rgb(238,238,238);color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><h2 style="font-family:'microsoft yahei', arial;font-weight:500;line-height:1.1;color:rgb(51,51,51);font-size:30px;text-align:justify;"><a name="t5"></a><span style="font-weight:700;">四象共赢</span></h2><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">前面我们讲了构建某个领域知识库的过程，那其实呢，一个人可能会在很多领域建立自己的知识体系，因为我们的生活本来就是多元中心的。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">一个平衡的人生包含四个象限：事业、家庭、社区、身心与精神。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">我们应当在每个象限中都确立一些关键目标，为这些关键目标配置资源（时间、精力、金钱、人脉等），在每个象限中建立自己的知识图谱。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">比如你是软件开发工程师，在事业领域，你构建软件开发相关的知识图谱，你还有家庭，可能会围绕夫妻、两性、婚姻、育儿、情感管理、亲密关系等构建出面向家庭的知识体系。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">再进一步，不同象限的知识，其实是可以交叉融合的。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">我们以软件开发中的<span style="font-weight:700;"><a href="http://lib.csdn.net/node/696" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Scrum</a></span>为例，来说明不同领域的知识体系如何相互融合。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">使用<span style="font-weight:700;"><a href="http://lib.csdn.net/search/Scrum" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">Scrum模型</a></span>来辅助产品开发时，先会抽象出一个Product Backlog（PB，产品需求列表），然后会从PB中挑选一部分需求，纳入到一个Sprint（冲刺，一般是为期2~4周的迭代）中来实现，每个Sprint有启动会议（主要选择要实现的需求或Story）、每日站会、任务看板、燃尽图、演示会议、回顾会议等方法来保证Sprint的顺利进行。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">这里面的流程简化下来就是：确定大的目标–&gt;拆分出阶段性小目标–&gt;可视化进度，用站会、燃尽图等反馈促进行动–&gt;回顾总结。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">某一个具体的方法，也可以运用到别的领域。以Scrum的站会为例，就可用于每一天的生活，无论是家庭还是工作。以我为例，每天早上我都会想今天要做什么事情，每天晚上会想今天完成了什么、什么没完成、遇见了什么问题、明天做什么，这种习惯就来自Scrum的站会，能极大提高你每一天的生活质量。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">当我们经常思考一个领域的知识怎样才能应用到另一个领域时，我们就开始了融合、创新的过程，进入了更高境界。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">如果你不断地找到了交叉地带，融合了各个领域的知识，那最终，你就可能将你所有的知识体系打通，统合出独属于你自己的和谐完整的知识图谱，帮助你实现平衡和谐。</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><img src="https://img-blog.csdn.net/20170105192022988?" alt="这里写图片描述" title="" style="border:0px;vertical-align:middle;display:table;"></p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;">从知识管理的角度看，单纯地讲学习已经不够。学习只是个人知识处理的一个环节，你还必须学会保存，共享和创新知识。构建知识体系并不断更新，这是保持核心竞争优势的良方——张斌教授，中国人民大学信息资源管理学院副院长</p><p style="color:rgb(51,51,51);font-family:'microsoft yahei', arial;font-size:16px;line-height:27.2px;text-align:justify;"><span style="font-weight:700;"><a href="http://lib.csdn.net/home" rel="nofollow" style="color:rgb(51,122,183);text-decoration:none;background-color:transparent;" target="_blank">CSDN知识库</a></span>提供了50+知识系统图谱和10000+资源内容&nbsp;<br>开发者可获得官网图谱，可自行生成图谱和知识库，提升技术知识管理的能力</p>            </div><br>                </div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    RicardoMLu01
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="images/avatar.gif/2019/02/07/构建技术知识体系，让自己含金量更高/" title="构建技术知识体系，让自己含金量更高">images/avatar.gif/2019/02/07/构建技术知识体系，让自己含金量更高/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Plan/" rel="tag"><i class="fa fa-tag"></i> Plan</a>
+          
+            <a href="/tags/Skill/" rel="tag"><i class="fa fa-tag"></i> Skill</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/06/s3c2440之UART学习笔记/" rel="next" title="s3c2440之UART学习笔记">
+                <i class="fa fa-chevron-left"></i> s3c2440之UART学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="RicardoMLu01">
+            
+              <p class="site-author-name" itemprop="name">RicardoMLu01</p>
+              <p class="site-description motion-element" itemprop="description">Cease to struggle and you cease to live</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ricardomlu01" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mail.163.com/" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://wx.qq.com/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-weixin"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.qq.com/" target="_blank" title="企鹅">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">有目标，才有知识体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">知识的内化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">同主题扩散</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">使用工具固化你的知识库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">迭代与更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">四象共赢</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RicardoMLu01</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'w9CYMho0cX7dGXSsxAy9DelK-gzGzoHsz',
+        appKey: 'YA2FtFyGtDw6L0wrHJb2eTfs',
+        placeholder: 'Just go go ^_^',
+        avatar:'mp',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("IokkGKi6U7IyOzvN2RUXAYCI-gzGzoHsz", "nlNDM3QiPx4gmMJxiqnTfGGu");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

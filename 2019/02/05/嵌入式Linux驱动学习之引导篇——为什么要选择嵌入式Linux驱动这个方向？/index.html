@@ -10,6 +10,21 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -104,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="Linux,">
+  <meta name="keywords" content="Linux,Plan,">
 
 
 
@@ -118,14 +133,14 @@
 
 
 <meta name="description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
-<meta name="keywords" content="Linux">
+<meta name="keywords" content="Linux,Plan">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
 <meta property="og:url" content="images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/index.html">
 <meta property="og:site_name" content="Ricardo Blogs">
 <meta property="og:description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-05T05:31:55.905Z">
+<meta property="og:updated_time" content="2019-02-07T07:40:37.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">
 <meta name="twitter:description" content="简介 酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上">
@@ -378,8 +393,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-05T13:31:55+08:00">
-                2019-02-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-07T15:40:37+08:00">
+                2019-02-07
               </time>
             
           </span>
@@ -397,8 +412,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/学习规划-方法/" itemprop="url" rel="index">
+                    <span itemprop="name">学习规划/方法</span>
                   </a>
                 </span>
 
@@ -455,16 +470,16 @@
       
 
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介 </strong></h3><p>酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上吧。虽然在填报志愿的时候有稍微了解过这个专业，但是毕竟没有真正去体验过，所以并没有对这个专业有清醒的认识。电气工程这个专业属于强电（直接理解为高压就好），摆正心态认真学下去能学的好（数学基础要打好）。这个专业虽然是工科里比较注重实践与理论相结合的专业，但由于其专业的特殊性，很难找到实践的机会（场地与设备都不太允许）。每学期基本上都有实验课，但是基本上都是验证性实验，且这些实验室基本都不对学生开放（只能是实验课去摸摸，毕竟设备都挺贵的）。顺其自然，我大一大二基本上都是在搞自动化方向的东西，毕竟成本低，易入门，而且做出来东西后很有成就感（这点最关键），所以基本上就是按照现在大多数大学生一样开始从单片机入门了。转折点是大二暑假，当时参加了全国大学生电子设计大赛，我发现周围的同学都好强，动手能力和学习能力都超乎我的想象，这时候惊呼：原来周围的同学都这么努力呀！莫名感到压力倍增…在长达1个月的集中训练中，我也发现其中存在的一些问题（或者对我来说的疑惑）。</p>
-<h3 id="代码的创造能力不足"><a href="#代码的创造能力不足" class="headerlink" title="代码的创造能力不足"></a><strong>代码的创造能力不足</strong></h3><p>虽然周围同学都有很强的自学和动手能力（比如调通一个四轴小飞行器或者倒立摆），但是真正需要自己创造的代码并不多，基本上就是搬运其他人的代码。这样能够快速实现作品的功能，但是也存在一些隐患。例如：对MCU各种接口的运行机制并不是很清楚，而STM32的库函数的广泛使用更是加深了这种隐患。万丈高楼平地起，没有打好地基外表再华丽也只是危楼。而且很多大公司在招应届毕业生时也更注重基础知识的考核。</p>
-<h3 id="过于浮躁"><a href="#过于浮躁" class="headerlink" title="过于浮躁"></a><strong>过于浮躁</strong></h3><p>这也是现代人的一个通病，基本上搬来的代码能用就行，也不去考虑是否能够进一步去优化，没有进行深入思考和实时总结。这样以后在遇到相同的问题时又需要重新来过，其实是最没有效率的做法。</p>
-<h3 id="同质化严重"><a href="#同质化严重" class="headerlink" title="同质化严重"></a><strong>同质化严重</strong></h3><p>这里说的同质化并不是作品的同质化（作品虽然有时也类似…），而是能力的同质化。感觉具备这方面能力的人实在太多，谁没有在大学的时候玩过几年单片机？名校学生的能力会比你差？找工作在招聘网上这些单片机开发的职位的薪资也比较低，因为太多人会了，能力相当的情况下公司肯定选择省钱的方案咯。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介 </strong></h2><p>酝酿了几分钟，依旧不知道如何开篇（这可能是工科男的一个通病吧）。索性随意起来，想到哪写到哪，这样也许思维能变得更加活跃呢。先交代一下背景，本人目前是国内某普通一本高校的一名大三学生，读的专业是电气工程及其自动化。转程序猿也是目前大多数跨专业就业学生的首选，毕竟薪资福利摆在那里，博主自然也是这股潮流中的一员。我也不知道当初在填报志愿的时候为什么要选择这个专业，可能是觉得这个专业的名字比较高大上吧。虽然在填报志愿的时候有稍微了解过这个专业，但是毕竟没有真正去体验过，所以并没有对这个专业有清醒的认识。电气工程这个专业属于强电（直接理解为高压就好），摆正心态认真学下去能学的好（数学基础要打好）。这个专业虽然是工科里比较注重实践与理论相结合的专业，但由于其专业的特殊性，很难找到实践的机会（场地与设备都不太允许）。每学期基本上都有实验课，但是基本上都是验证性实验，且这些实验室基本都不对学生开放（只能是实验课去摸摸，毕竟设备都挺贵的）。顺其自然，我大一大二基本上都是在搞自动化方向的东西，毕竟成本低，易入门，而且做出来东西后很有成就感（这点最关键），所以基本上就是按照现在大多数大学生一样开始从单片机入门了。转折点是大二暑假，当时参加了全国大学生电子设计大赛，我发现周围的同学都好强，动手能力和学习能力都超乎我的想象，这时候惊呼：原来周围的同学都这么努力呀！莫名感到压力倍增…在长达1个月的集中训练中，我也发现其中存在的一些问题（或者对我来说的疑惑）。</p>
+<h2 id="代码的创造能力不足"><a href="#代码的创造能力不足" class="headerlink" title="代码的创造能力不足"></a><strong>代码的创造能力不足</strong></h2><p>虽然周围同学都有很强的自学和动手能力（比如调通一个四轴小飞行器或者倒立摆），但是真正需要自己创造的代码并不多，基本上就是搬运其他人的代码。这样能够快速实现作品的功能，但是也存在一些隐患。例如：对MCU各种接口的运行机制并不是很清楚，而STM32的库函数的广泛使用更是加深了这种隐患。万丈高楼平地起，没有打好地基外表再华丽也只是危楼。而且很多大公司在招应届毕业生时也更注重基础知识的考核。</p>
+<h2 id="过于浮躁"><a href="#过于浮躁" class="headerlink" title="过于浮躁"></a><strong>过于浮躁</strong></h2><p>这也是现代人的一个通病，基本上搬来的代码能用就行，也不去考虑是否能够进一步去优化，没有进行深入思考和实时总结。这样以后在遇到相同的问题时又需要重新来过，其实是最没有效率的做法。</p>
+<h2 id="同质化严重"><a href="#同质化严重" class="headerlink" title="同质化严重"></a><strong>同质化严重</strong></h2><p>这里说的同质化并不是作品的同质化（作品虽然有时也类似…），而是能力的同质化。感觉具备这方面能力的人实在太多，谁没有在大学的时候玩过几年单片机？名校学生的能力会比你差？找工作在招聘网上这些单片机开发的职位的薪资也比较低，因为太多人会了，能力相当的情况下公司肯定选择省钱的方案咯。</p>
 <p>以上就是我大学期间的一些思想变化，它也逐渐让我清醒的认识自己，我想转嵌入式Linux驱动开发的决心俞加强烈。因为这些问题能够在嵌入式Linux驱动开发的学习过程中迎刃而解，毕竟环环相扣，若囫囵吞枣则寸步难行。啰嗦了这么久，终于要转入正题了。语言功底太差，各位请见谅（手动捂脸）。。。</p>
 <p>有人说嵌入式是一个坑，是一个无底洞。其实他们说的也没错，因为嵌入式涉及的知识太广泛了，需要花很多的时间去学习一些新的东西，而且还不一定能够立刻有成效，这也让很多想踏入嵌入式大门的初学者停下了脚步。然而，嵌入式的门槛固然较高，但是若学有所成，得到的薪资和发展空间也是纯单片机开发所不能及的。那来说说我为什么要选择嵌入式Linux驱动这个方向吧。</p>
-<h3 id="​具备一定理论与实践基础"><a href="#​具备一定理论与实践基础" class="headerlink" title="​具备一定理论与实践基础"></a>​<strong>具备一定理论与实践基础</strong></h3><p>我们的选择是会受环境因素影响的，本身专业就是电类专业，自然对硬件知识的接受能力比较强，加之在大学期间也经常捣鼓单片机，对各种硬件接口的基本原理还是比较熟悉的。相对于零基础的初学者，我们依然有一些明显的优势。</p>
-<h3 id="​驱动方向的人才相对紧缺"><a href="#​驱动方向的人才相对紧缺" class="headerlink" title="​驱动方向的人才相对紧缺"></a>​<strong>驱动方向的人才相对紧缺</strong></h3><p>比起纯IT方向的程序猿，往嵌入式Linux驱动开发方向走的人就少很多了，这也导致驱动方向的人才相对紧缺。当然这其中也与开发难度大、学习周期长、涉及范围广、成本高等因素有关。这也就形成了待遇较高的局面。况且最近发生的“美国限制向中兴出口芯片案”迫使我国加快芯片的自主研发，虽然芯片的研发还任重而道远，但已经是基本趋势，到那时嵌入式驱动工程师需求就更加大了。</p>
-<h3 id="​发展空间比较大和选择多"><a href="#​发展空间比较大和选择多" class="headerlink" title="​发展空间比较大和选择多"></a>​<strong>发展空间比较大和选择多</strong></h3><p>嵌入式产品多种多样，复杂多变，感觉只要与智能电子相关的产品都能叫嵌入式产品，这也就在一定程度上拓宽了嵌入式驱动方向的发展空间。同时，选择也变得相对较多。可以和志同道合的朋友一起创业，或者进入公司工作，总而言之，自己能力越强选择越多。同时，若想转IT上层业务软件方向相对比较容易，至少比上层业务转驱动方向容易很多。</p>
-<h3 id="​整体架构稳定"><a href="#​整体架构稳定" class="headerlink" title="​整体架构稳定"></a>​<strong>整体架构稳定</strong></h3><p>嵌入式驱动方向虽然入门难，但是整体架构比较稳定，并不会像IT上层软件一样需要根据客户需求不断更改自己的实施方案甚至完全推翻，可能就有更多的时间来提升自己的技术能力。</p>
+<h2 id="​具备一定理论与实践基础"><a href="#​具备一定理论与实践基础" class="headerlink" title="​具备一定理论与实践基础"></a>​<strong>具备一定理论与实践基础</strong></h2><p>我们的选择是会受环境因素影响的，本身专业就是电类专业，自然对硬件知识的接受能力比较强，加之在大学期间也经常捣鼓单片机，对各种硬件接口的基本原理还是比较熟悉的。相对于零基础的初学者，我们依然有一些明显的优势。</p>
+<h2 id="​驱动方向的人才相对紧缺"><a href="#​驱动方向的人才相对紧缺" class="headerlink" title="​驱动方向的人才相对紧缺"></a>​<strong>驱动方向的人才相对紧缺</strong></h2><p>比起纯IT方向的程序猿，往嵌入式Linux驱动开发方向走的人就少很多了，这也导致驱动方向的人才相对紧缺。当然这其中也与开发难度大、学习周期长、涉及范围广、成本高等因素有关。这也就形成了待遇较高的局面。况且最近发生的“美国限制向中兴出口芯片案”迫使我国加快芯片的自主研发，虽然芯片的研发还任重而道远，但已经是基本趋势，到那时嵌入式驱动工程师需求就更加大了。</p>
+<h2 id="​发展空间比较大和选择多"><a href="#​发展空间比较大和选择多" class="headerlink" title="​发展空间比较大和选择多"></a>​<strong>发展空间比较大和选择多</strong></h2><p>嵌入式产品多种多样，复杂多变，感觉只要与智能电子相关的产品都能叫嵌入式产品，这也就在一定程度上拓宽了嵌入式驱动方向的发展空间。同时，选择也变得相对较多。可以和志同道合的朋友一起创业，或者进入公司工作，总而言之，自己能力越强选择越多。同时，若想转IT上层业务软件方向相对比较容易，至少比上层业务转驱动方向容易很多。</p>
+<h2 id="​整体架构稳定"><a href="#​整体架构稳定" class="headerlink" title="​整体架构稳定"></a>​<strong>整体架构稳定</strong></h2><p>嵌入式驱动方向虽然入门难，但是整体架构比较稳定，并不会像IT上层软件一样需要根据客户需求不断更改自己的实施方案甚至完全推翻，可能就有更多的时间来提升自己的技术能力。</p>
 <p>接下来我还会分享一些自己学习嵌入式Linux驱动方向的学习笔记和心得体会，尽请期待。。。由于本人也是初学者，也有很多知识需要补充，可能有哪里说的不对望各位大佬指教，共同进步！! !写博客的初衷是想自己巩固一下所学知识，并且做一些知识输出分享给大家，何乐而不为呢！</p>
 <p>很喜欢下面的一段话：</p>
 <blockquote>
@@ -482,12 +497,32 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    RicardoMLu01
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/" title="嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？">images/avatar.gif/2019/02/05/嵌入式Linux驱动学习之引导篇——为什么要选择嵌入式Linux驱动这个方向？/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
             <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/Plan/" rel="tag"><i class="fa fa-tag"></i> Plan</a>
           
         </div>
       
@@ -594,7 +629,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,10 +639,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -616,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -649,21 +684,21 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/" target="_blank" title="֪知乎">
+                    <a href="https://weibo.com/" target="_blank" title="微博">
                       
-                        <i class="fa fa-fw fa-ioxhost"></i></a>
+                        <i class="fa fa-fw fa-weibo"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.baidu.com/" target="_blank" title="Google">
+                    <a href="https://wx.qq.com/" target="_blank" title="微信">
                       
-                        <i class="fa fa-fw fa-google"></i></a>
+                        <i class="fa fa-fw fa-weixin"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                    <a href="https://www.qq.com/" target="_blank" title="企鹅">
                       
-                        <i class="fa fa-fw fa-skype"></i></a>
+                        <i class="fa fa-fw fa-qq"></i></a>
                   </span>
                 
             </div>
@@ -696,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的创造能力不足"><span class="nav-number">2.</span> <span class="nav-text">代码的创造能力不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过于浮躁"><span class="nav-number">3.</span> <span class="nav-text">过于浮躁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同质化严重"><span class="nav-number">4.</span> <span class="nav-text">同质化严重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​具备一定理论与实践基础"><span class="nav-number">5.</span> <span class="nav-text">​具备一定理论与实践基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​驱动方向的人才相对紧缺"><span class="nav-number">6.</span> <span class="nav-text">​驱动方向的人才相对紧缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​发展空间比较大和选择多"><span class="nav-number">7.</span> <span class="nav-text">​发展空间比较大和选择多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#​整体架构稳定"><span class="nav-number">8.</span> <span class="nav-text">​整体架构稳定</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的创造能力不足"><span class="nav-number">2.</span> <span class="nav-text">代码的创造能力不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过于浮躁"><span class="nav-number">3.</span> <span class="nav-text">过于浮躁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同质化严重"><span class="nav-number">4.</span> <span class="nav-text">同质化严重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#​具备一定理论与实践基础"><span class="nav-number">5.</span> <span class="nav-text">​具备一定理论与实践基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#​驱动方向的人才相对紧缺"><span class="nav-number">6.</span> <span class="nav-text">​驱动方向的人才相对紧缺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#​发展空间比较大和选择多"><span class="nav-number">7.</span> <span class="nav-text">​发展空间比较大和选择多</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#​整体架构稳定"><span class="nav-number">8.</span> <span class="nav-text">​整体架构稳定</span></a></li></ol></div>
             
 
           </div>
@@ -1361,5 +1396,8 @@
 
   
 
+
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 </html>

@@ -10,6 +10,21 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -104,7 +119,7 @@
 
 
 
-  <meta name="keywords" content=",">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -120,14 +135,13 @@
 
 
 <meta name="description" content="豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。 　　时维九月，序属三秋。潦水尽而寒潭清">
-<meta name="keywords" content="古诗词">
 <meta property="og:type" content="website">
 <meta property="og:title" content="滕王阁序">
 <meta property="og:url" content="images/avatar.gif/about/index.html">
 <meta property="og:site_name" content="Ricardo Blogs">
 <meta property="og:description" content="豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。 　　时维九月，序属三秋。潦水尽而寒潭清">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-05T11:28:45.545Z">
+<meta property="og:updated_time" content="2019-02-07T07:33:00.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="滕王阁序">
 <meta name="twitter:description" content="豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。 　　时维九月，序属三秋。潦水尽而寒潭清">
@@ -366,13 +380,6 @@
 
           
 
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
         </div>
         
           
@@ -410,7 +417,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -420,10 +427,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -432,7 +439,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -465,21 +472,21 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/" target="_blank" title="֪知乎">
+                    <a href="https://weibo.com/" target="_blank" title="微博">
                       
-                        <i class="fa fa-fw fa-ioxhost"></i></a>
+                        <i class="fa fa-fw fa-weibo"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.baidu.com/" target="_blank" title="Google">
+                    <a href="https://wx.qq.com/" target="_blank" title="微信">
                       
-                        <i class="fa fa-fw fa-google"></i></a>
+                        <i class="fa fa-fw fa-weixin"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                    <a href="https://www.qq.com/" target="_blank" title="企鹅">
                       
-                        <i class="fa fa-fw fa-skype"></i></a>
+                        <i class="fa fa-fw fa-qq"></i></a>
                   </span>
                 
             </div>
@@ -1161,5 +1168,8 @@
 
   
 
+
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 </html>
